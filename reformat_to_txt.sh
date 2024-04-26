@@ -7,7 +7,7 @@ mkdir -p "${directionay}"
 
 directionay_no_odt="odt"
 
-for lang in ami trv
+for lang in ami tay pwn bnn pyu dru tsu xsy tao ssf ckv trv ais sdq sxr xnb
 do
 	soffice --headless --convert-to txt:Text --outdir "${directionay}" \
 		"${directionay_no_odt}/${lang}.odt"
