@@ -12,6 +12,7 @@ do
 	soffice --headless --convert-to txt:Text --outdir "${directionay}" \
 		"${directionay_no_odt}/${lang}.odt"
 	cat "${directionay}/${lang}.txt" \
+		| sed 's/參照 [^ ]\+ /\n/g' \
 		| grep -e '（[）★]' \
 		| sed 's/（.*//g' \
 		| grep -v [0-9] \
