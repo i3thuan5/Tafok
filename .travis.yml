@@ -45,4 +45,8 @@ jobs:
       script:
         - bash download_odt.sh
         - bash reformat_to_txt.sh
+        - >
+          find txt/ -type f -name '*.word.txt' -exec
+          sed '4,$d' -i {}
+          \;
         - bash download_all_words.sh "${API_ACCOUNT}"
