@@ -33,3 +33,9 @@ jobs:
         - pip install tox
       script:
         - tox -e shellcheck
+    - stage: Download
+      name: Download some words
+      script:
+        - bash download_odt.sh
+        - bash reformat_to_txt.sh
+        - bash download_all_words.sh "${Account}"

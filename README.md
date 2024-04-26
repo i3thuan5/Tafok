@@ -7,5 +7,5 @@
 ```bash
 bash download_odt.sh
 bash reformat_to_txt.sh
-bash bash download_all_words.sh <account>
+bash download_all_words.sh <api-account>
 ```
