@@ -6,8 +6,5 @@
 ```bash
 bash download_odt.sh
 bash reformat_to_txt.sh
-cat ami.txt | grep -e '（[）★]'  | sed 's/（.*//g' | grep -v [0-9] > ami.word.txt
-curl -F "FMT=1" -F account=<account> -F TribesCode=2 \
-	-F "qw=teker ni Idek" https://e-dictionary.ilrdf.org.tw/wsReDictionary.htm \
-	| jq  && echo
+bash bash download_all_words.sh <account>
 ```
