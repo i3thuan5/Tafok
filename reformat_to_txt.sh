@@ -15,6 +15,6 @@ do
 		| sed 's/參照 [^ ]\+ /\n/g' \
 		| grep -e '（[）★]' \
 		| sed 's/（.*//g' \
-		| grep -v [0-9] \
+		| grep -v '[0-9]' \
 		> "${directionay}/${lang}.word.txt"
 done
