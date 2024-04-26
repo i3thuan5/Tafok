@@ -1,4 +1,7 @@
 #!/bin/bash
+
+set -eu
+
 account=$1
 Language=$2
 TribesCode=$3
