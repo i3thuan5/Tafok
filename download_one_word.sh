@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eu
+set -u
 
 account=$1
 Language=$2
