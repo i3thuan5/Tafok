@@ -28,6 +28,7 @@ do
 	)
 	while read -r word;
 	do
-	    bash download_one_word.sh "${account}" "$lang" "${lang_id[$lang]}" "${word}"
+	    bash download_one_word.sh "${account}" "$lang" "${lang_id[$lang]}" "${word}" \
+	      || echo '錯誤'
 	done < "${directionay_no_txt}/${lang}.word.txt"
 done
