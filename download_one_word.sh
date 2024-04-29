@@ -2,10 +2,10 @@
 
 set -u
 
-account=$1
-Language=$2
-TribesCode=$3
-Query=$4
+account="$1"
+Language="$2"
+TribesCode="$3"
+Query="$4"
 
 directionay="json/${Language}"
 
