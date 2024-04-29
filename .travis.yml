@@ -50,3 +50,4 @@ jobs:
           sed '4,$d' -i {}
           \;
         - bash download_all_words.sh "${API_ACCOUNT}"
+        - grep "Mitala kako ci Akian aci Panayan." json/ami/aci.json
