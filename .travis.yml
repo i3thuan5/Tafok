@@ -33,3 +33,21 @@ jobs:
         - pip install tox
       script:
         - tox -e shellcheck
+    - stage: Download
+      name: Download some words
+      install:
+        - sudo apt-get update
+        - >
+          sudo apt-get install -y
+          libreoffice-base libreoffice-core libreoffice-java-common default-jre
+          libreoffice-writer
+          jq
+      script:
+        - bash download_odt.sh
+        - bash reformat_to_txt.sh
+        - >
+          find txt/ -type f -name '*.word.txt' -exec
+          sed '11,$d' -i {}
+          \;
+        - bash download_all_words.sh "${API_ACCOUNT}"
+        - grep "Mitala kako ci Akian aci Panayan." json/ami/aci.json
