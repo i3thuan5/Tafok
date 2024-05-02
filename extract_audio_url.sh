@@ -6,7 +6,7 @@ directionay_no_json="json/"
 result="audio_list.txt"
 rm -f "${result}"
 
-for file_path in `find ${directionay_no_json} -type f`
+while IFS= read -r -d '' file_path
 do
 	cat "${file_path}" \
 		| jq --raw-output '.GenericData.DATA[]?.File?.Path'\
@@ -17,4 +17,4 @@ do
 	cat "${file_path}" \
 		| jq --raw-output '.GenericData.DATA[]?.Explanation?[]?.Sentence?.File?.Path' \
 		>> "${result}"
-done
+done <   <(find ${directionay_no_json} -type f)
