@@ -12,9 +12,9 @@ do
 		| jq '.GenericData.DATA[].File?.Path' \
 		>> "${result}"
 	cat "${file_path}" \
-		| jq '.GenericData.DATA[].Explanation?.Sentence?.File.Path' \
+		| jq '.GenericData.DATA[].Explanation?.Sentence?.File?.Path' \
 		>> "${result}"
 	cat "${file_path}" \
-		| jq '.GenericData.DATA[].Explanation?[]?.Sentence?.File.Path' \
+		| jq '.GenericData.DATA[].Explanation?[]?.Sentence?.File?.Path' \
 		>> "${result}"
 done
