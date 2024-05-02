@@ -9,12 +9,12 @@ rm -f "${result}"
 for file_path in `find ${directionay_no_json} -type f`
 do
 	cat "${file_path}" \
-		| jq '.GenericData.DATA[].File?.Path' \
+		| jq --raw-output '.GenericData.DATA[]?.File?.Path'\
 		>> "${result}"
 	cat "${file_path}" \
-		| jq '.GenericData.DATA[].Explanation?.Sentence?.File?.Path' \
+		| jq --raw-output '.GenericData.DATA[]?.Explanation?.Sentence?.File?.Path' \
 		>> "${result}"
 	cat "${file_path}" \
-		| jq '.GenericData.DATA[].Explanation?[]?.Sentence?.File?.Path' \
+		| jq --raw-output '.GenericData.DATA[]?.Explanation?[]?.Sentence?.File?.Path' \
 		>> "${result}"
 done
