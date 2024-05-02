@@ -9,4 +9,5 @@ bash download_odt.sh
 bash reformat_to_txt.sh
 bash download_all_words.sh <api-account>
 bash extract_audio_url.sh
+bash download_audio.sh
 ```
